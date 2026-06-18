@@ -82,9 +82,9 @@ def init_rag():
     from langchain_core.runnables import RunnablePassthrough
 
     LLM_PROVIDER = "groq"
-    LLM_MODEL = "llama3-70b-8192"
+    LLM_MODEL = "llama-3.3-70b-versatile"
     EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
-    CORPUS_PATH = "/kaggle/input/zyro-dynamics-hr-corpus/"
+    CORPUS_PATH = "/kaggle/input/competitions/niat-masterclass-rag-challenge/zyro-dynamics-hr-corpus"
 
     # Load docs
     loader = PyPDFDirectoryLoader(CORPUS_PATH)
