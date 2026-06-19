@@ -18,7 +18,6 @@ st.set_page_config(
 st.title("🏢 Zyro Dynamics HR Help Desk")
 st.caption("RAG Powered HR Assistant")
 
-# ── Initialize RAG ──────────────────────
 @st.cache_resource
 def init_bot():
     CORPUS_PATH = "/kaggle/input/zyro-dynamics-hr-corpus/"
@@ -105,7 +104,6 @@ Classification:""")
     
     return ask
 
-# ── Chat Interface ──────────────────────
 ask = init_bot()
 
 if "messages" not in st.session_state:
