@@ -20,7 +20,7 @@ st.caption("RAG Powered HR Assistant")
 
 @st.cache_resource
 def init_bot():
-    CORPUS_PATH = "/kaggle/input/zyro-dynamics-hr-corpus/"
+    CORPUS_PATH = "hr_docs"
     loader = PyPDFDirectoryLoader(CORPUS_PATH)
     documents = loader.load()
     
@@ -43,7 +43,7 @@ def init_bot():
         search_kwargs={"k": 6, "fetch_k": 30, "lambda_mult": 0.5}
     )
     
-    llm = ChatGroq(model="llama3-70b-8192", temperature=0.0, max_tokens=1024)
+    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.0, max_tokens=1024)
     
     RAG_PROMPT = ChatPromptTemplate.from_template("""You are ZyroBot, the HR Help Desk assistant for Zyro Dynamics Pvt. Ltd.
 Answer the employee's question using ONLY the provided HR policy context.
